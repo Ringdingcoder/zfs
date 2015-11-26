@@ -535,7 +535,7 @@ traverse_impl(spa_t *spa, dsl_dataset_t *ds, uint64_t objset, blkptr_t *rootbp,
 		VERIFY(spa_feature_enabled_txg(spa,
 		    SPA_FEATURE_HOLE_BIRTH, &td->td_hole_birth_enabled_txg));
 	} else {
-		td->td_hole_birth_enabled_txg = 0;
+		td->td_hole_birth_enabled_txg = UINT64_MAX;
 	}
 
 	pd->pd_flags = flags;
